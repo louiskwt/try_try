@@ -1,38 +1,56 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"strings"
+)
+
+// func greet(n string) {
+// 	fmt.Printf("Good morning %v \n", n)
+// }
+
+// func bye(n string) {
+// 	fmt.Printf("Good bye %v \n", n)
+// }
+
+// func cycleNames(n []string, f func(string)) {
+// 	for _, v := range n {
+// 		f(v)
+// 	}
+// }
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
+
+func getInitials(n string) (string, string) {
+	s := strings.ToUpper(n)
+	names := strings.Split(s, " ")
+
+	var initials []string
+	for _, v := range names {
+		initials = append(initials, v[:1])
+	}
+
+	if len(initials) > 1 {
+		return initials[0], initials[1]
+	}
+
+	return initials[0], "_"
+}
 
 func main() {
-	// Print
 
-	fmt.Print("hello")
-	fmt.Print("world! \n")
+	a1 := circleArea(10.5)
+	a2 := circleArea(2)
 
-	age := 35
+	fn1, sn1 := getInitials("tifa lockhart")
+	fn2, sn2 := getInitials("cloud strife")
+	fn3, sn3 := getInitials("Asuna")
 
-	// Println
-	fmt.Println("may age is: ", age)
-	
-	// Printf (format)
-
-	date := 5
-	var name string = "Louis"
-
-	fmt.Printf("today is %v and my name is %v\n", date, name)
-	fmt.Printf("age is of type %T\n", age)
-	fmt.Printf("You scored %0.1f points! \n", 255.55)
-
-	// Sprintf (save formatted strings)
-	var str = fmt.Sprintf("my age is %v and my name is %v", age, name)
-
-	fmt.Println(str)
-	
-	
-	// var num uint = 123
-	// var num2 uint = 123
-	// var out uint = num2 + num
-
-	// fmt.Println(name, out)
-
-
+	fmt.Printf("Circle 1: %0.3f and Circle 2: %0.3f \n", a1, a2)
+	fmt.Println(fn1, sn1)
+	fmt.Println(fn2, sn2)
+	fmt.Println(fn3, sn3)
 }
