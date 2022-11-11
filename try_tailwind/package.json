@@ -1,0 +1,15 @@
+{
+  "name": "try_tailwind",
+  "version": "1.0.0",
+  "description": "tailwind css crash course",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./css/main.css",
+    "watch": "tailwind -i ./input.css -o ./css/main.css --watch"
+  },
+  "author": "Louis",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.3"
+  }
+}
