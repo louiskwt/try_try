@@ -13,7 +13,13 @@
     },
     "categories": {
       "function": {
-        "customer": {}
+        "customer": {
+          "deploymentBucketName": "amplify-reactamplify-dev-75117-deployment",
+          "s3Key": "amplify-builds/customer-4966776c48646e663877-build.zip"
+        }
+      },
+      "api": {
+        "amplifyReact": {}
       }
     }
   }
