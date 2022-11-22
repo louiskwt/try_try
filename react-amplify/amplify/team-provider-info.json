@@ -15,11 +15,17 @@
       "function": {
         "customer": {
           "deploymentBucketName": "amplify-reactamplify-dev-75117-deployment",
-          "s3Key": "amplify-builds/customer-4966776c48646e663877-build.zip"
+          "s3Key": "amplify-builds/customer-4d6f664d455941777136-build.zip"
         }
       },
       "api": {
         "amplifyReact": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d8p0ialmqkv5u",
+          "type": "manual"
+        }
       }
     }
   }
