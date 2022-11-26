@@ -21,7 +21,7 @@ class Stack(Generic[T]):
         return repr(self._container)
 
 
-num_discs: int = 144
+num_discs: int = 1200
 tower_a: Stack[int] = Stack()
 tower_b: Stack[int] = Stack()
 tower_c: Stack[int] = Stack()
@@ -42,8 +42,6 @@ def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
 
 # total moves = 2^n - 1
 total_moves = pow(2, num_discs) - 1
-
-print(total_moves)
 
 def hanoi2(begin: Stack[int], end: Stack[int], temp: Stack[int], total: int) -> None:
     for i in range(1, total):
