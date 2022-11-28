@@ -1,0 +1,4 @@
+from my_fibonacci import my_fib
+
+def test_my_fib():
+    assert my_fib(300) == 222232244629420445529739893461909967206666939096499764990979600
