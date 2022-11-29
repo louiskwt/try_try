@@ -15,6 +15,12 @@ public class App {
             System.out.println("You cannot ride");
         }
 
+        String[] arr = {"Hello", "world"};
+
+        String ans = arr[1];
+
+        System.out.println(ans);
+
         SC.close();
     }
 }
