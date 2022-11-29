@@ -15,6 +15,6 @@ public class App {
             System.out.println("You cannot ride");
         }
 
-        
+        SC.close();
     }
 }
