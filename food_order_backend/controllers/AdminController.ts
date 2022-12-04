@@ -3,6 +3,14 @@ import { CreateVandorInput } from "../dto";
 import { Vandor } from "../models";
 import { GeneratePassword, GenerateSalt } from "../utility";
 
+export const FindVandor = async (id: string | undefined, email?: string) => {
+  if (email) {
+    return await Vandor.findOne({ email });
+  } else {
+    return await Vandor.findById(id);
+  }
+};
+
 export const CreateVandor = async (
   req: Request,
   res: Response,
@@ -19,8 +27,7 @@ export const CreateVandor = async (
     phone,
   } = <CreateVandorInput>req.body;
 
-  const existingVandor = await Vandor.findOne({ email: email });
-
+  const existingVandor = await FindVandor("", email);
   if (existingVandor !== null) {
     return res.json({ Message: "A vandor has existed with this email ID" });
   }
@@ -54,10 +61,26 @@ export const GetVandors = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {};
+) => {
+  const vandors = await Vandor.find();
+
+  if (vandors.length > 0) {
+    return res.status(200).json(vandors);
+  }
+  return res.json({
+    message: "Vandors data are not available",
+  });
+};
 
 export const GetVandorById = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {};
+) => {
+  const vandorId = req.params.id;
+  const vandor = await FindVandor(vandorId);
+  if (vandor) {
+    return res.json(vandor);
+  }
+  return res.json({ message: "Vandors data are not available" });
+};
