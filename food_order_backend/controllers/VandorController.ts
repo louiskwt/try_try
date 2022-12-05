@@ -40,7 +40,14 @@ export const GetVandorProfile = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {};
+) => {
+  const user = req.user;
+  if (user) {
+    const existingVandor = await FindVandor(user._id);
+    return res.json(existingVandor);
+  }
+  return res.json({ Message: "Vandor not found" });
+};
 
 export const UpdateVandorProfile = async (
   req: Request,
