@@ -76,4 +76,17 @@ export const UpdateVandorService = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {};
+) => {
+  const user = req.user;
+
+  if (user) {
+    const existingVandor = await FindVandor(user._id);
+    if (existingVandor !== null) {
+      existingVandor.serviceAvailable = !existingVandor.serviceAvailable;
+
+      const savedResult = await existingVandor.save();
+      return res.json(savedResult);
+    }
+  }
+  return res.json({ Message: "Vandor not found" });
+};
