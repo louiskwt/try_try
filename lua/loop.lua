@@ -21,3 +21,15 @@ print(type (tbl3) == "nil" )
 
 print(type (x) == nil) -- false
 print(type (x) == "nil") -- true
+
+function block()
+    return "*"
+end
+
+for i = 1, 10 do
+    for j = 2, i do
+        io.write(block())
+    end
+    io.write("\n")
+end
+
