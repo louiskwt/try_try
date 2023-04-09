@@ -3,17 +3,24 @@ function block()
     return "*"
 end
 
+function space()
+    return " "
+end
+
 function mario(n)
     local row = n
-    for i = 0, row do
-        for j = 1, i do
-            io.write(block())
+    for i = 1, row, 1 do
+        for j = 1, row, 1 do
+            if (j + i <= row)
+            then
+                io.write(space())
+            else
+                io.write(block())
+            end
         end
-
-        if (i > 0)
-        then
-            io.write("\n")
-        end
+    
+        io.write("\n")
+     
     end
 end
 
