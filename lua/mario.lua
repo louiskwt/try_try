@@ -9,8 +9,8 @@ end
 
 function mario(n)
     local row = n
-    for i = 1, row, 1 do
-        for j = 1, row, 1 do
+    for i = 1, row do
+        for j = 1, row do
             if (j + i <= row)
             then
                 io.write(space())
@@ -25,4 +25,4 @@ function mario(n)
 end
 
 
-mario(9)
+mario(10)
