@@ -17,3 +17,22 @@ else
   puts "#{under18} #{user[:name]}"
 end
 
+
+# array
+numbers = [1, 2, 3, 4, 5]
+
+squared_nums = numbers.map do |number|
+  number * number
+end
+
+puts squared_nums.inspect
+puts numbers.inspect
+
+
+numbers.each do |number|
+  if number % 2 == 0
+    puts "even: #{number}"
+  else
+    puts "odd: #{number}"
+  end
+end
