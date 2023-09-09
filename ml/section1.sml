@@ -13,3 +13,10 @@ fun isEven (x: int) = (* check if an int is even *)
 
 fun square (x:int) = 
     x * x
+
+(* pairs *)
+fun swap (pr: int*bool) =
+    (#2 pr, #1 pr)
+
+
+val p = (1, false);
