@@ -19,4 +19,11 @@ fun swap (pr: int*bool) =
     (#2 pr, #1 pr)
 
 
-val p = (1, false);
+val p = (1, false)
+
+val x = (3, (4, (5, 6)));
+val y = (#2 x, (#1 x, #2 (#2 x)));
+
+val ans = (#2 y, 4);
+(* ans = ((3,(5,6)),4) : (int * (int * int)) * int *)
+
