@@ -10,3 +10,6 @@ fun isEven (x: int) = (* check if an int is even *)
     if x mod 2 = 0
     then true
     else false
+
+fun square (x:int) = 
+    x * x
