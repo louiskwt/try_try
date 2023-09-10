@@ -38,3 +38,22 @@ hd (tl (tl x));  (* return 6 *)
 
 (* join list *)
 1::x;
+
+(* let local binding *)
+fun silly3 () =
+    let 
+      val x = (let val x = 5 in x + 10 end); (* x = 15 *)
+    in
+      (x, let val x = 2 in x end, let val x = 10 in let val x = 2 in x end end)
+    end
+(* evaluate to (15, 2, 2) *)
+
+(* nested function *)
+fun countup_from1 (x : int) = 
+    let fun count (from : int) =
+            if from = x 
+            then x :: []
+            else from :: count(from+1)
+    in
+        count (1)
+    end
