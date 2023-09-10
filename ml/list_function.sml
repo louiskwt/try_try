@@ -36,3 +36,5 @@ fun seconds (xs : (int * int) list) = (* [3, 5]*)
 
 fun sum_pair_list2 (xs : (int * int) list) =
     (sum_list (firsts xs)) + (sum_list (seconds xs)) 
+
+fun factorial (ns : int) = list_product(countdown ns)
