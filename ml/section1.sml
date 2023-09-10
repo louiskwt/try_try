@@ -27,3 +27,14 @@ val y = (#2 x, (#1 x, #2 (#2 x)));
 val ans = (#2 y, 4);
 (* ans = ((3,(5,6)),4) : (int * (int * int)) * int *)
 
+(* list *)
+val x = [5, 1, 6, 8];
+
+(* check if list is null *)
+null x;  (* false ; null is a function in ml *)
+
+(* accessing element *)
+hd (tl (tl x));  (* return 6 *)
+
+(* join list *)
+1::x;
