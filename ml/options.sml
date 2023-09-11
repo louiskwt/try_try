@@ -13,4 +13,4 @@ val x = max1 [88, 28, 90, 1, 2, 82];
 val y = ((valOf (x))) + 3;
 (* y = 93 *)
 
-
+(* options --> similar to list but can hold 1 or 0 (NONE) element *)
