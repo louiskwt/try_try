@@ -3,6 +3,14 @@ fun sum_list(xs : int list) =
     then 0
     else hd xs + sum_list(tl xs)
 
+fun cond_sum(xs: (int * int) list, m: int) =
+    if null xs then
+        0
+    else if #2 (hd xs) = m then
+        1 + cond_sum(tl xs, m)
+    else
+        0 + cond_sum(tl xs, m);
+
 fun list_product (xs : int list) =
     if null xs
     then 1
