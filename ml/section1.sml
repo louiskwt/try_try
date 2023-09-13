@@ -57,3 +57,7 @@ fun countup_from1 (x : int) =
     in
         count (1)
     end
+
+fun practice (d1 : (int * int * int), d2 : (int * int * int)) =
+    (#1 d1, #1 d2, 2)
+
