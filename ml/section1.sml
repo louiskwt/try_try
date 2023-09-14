@@ -61,3 +61,24 @@ fun countup_from1 (x : int) =
 fun practice (d1 : (int * int * int), d2 : (int * int * int)) =
     (#1 d1, #1 d2, 2)
 
+fun generateMatchingList(xs: int list, num: int) =
+  let
+    fun matchHelper(lst: int list, num: int) = 
+        if null lst then
+          []
+        else
+          let
+            val x = hd lst
+            val rest = tl lst
+          in 
+            if x = num then
+                x :: matchHelper(rest, num)
+            else
+                matchHelper(rest, num)
+          end;
+  in
+    matchHelper(xs, num)
+  end;
+
+val myList = [1, 2, 2, 3, 4, 5, 3, 6, 7];
+val matchingList = generateMatchingList(myList, 3);
