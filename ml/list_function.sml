@@ -9,7 +9,7 @@ fun cond_sum(xs: (int * int) list, m: int) =
     else if #2 (hd xs) = m then
         1 + cond_sum(tl xs, m)
     else
-        0 + cond_sum(tl xs, m);
+        0 + cond_sum(tl xs, m)
 
 fun list_product (xs : int list) =
     if null xs
