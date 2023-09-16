@@ -18,3 +18,11 @@ print(dg)
 
 dh = diff(h, x)
 print(dh)
+
+i = symbols('i')
+
+u = 3*i**4 + 2*i**3 - i ** 2 + 36
+
+d2u = diff(u, i, 3)
+
+print(d2u)
