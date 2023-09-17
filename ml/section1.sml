@@ -88,3 +88,12 @@ val li1 = [1, 2, 3];
 val li2 = [8, 9, 10];
 
 val appended_li = li1 @ li2;
+
+(* finding index in list *)
+val myList = [10, 20, 30, 40, 50];
+val element = 30;
+
+val indexOption = List.findi (fn (_, x) => x = element) myList;
+val index = case indexOption of
+                SOME (i, _) => i
+              | NONE => ~1;  (* or any other value to indicate element not found *)
