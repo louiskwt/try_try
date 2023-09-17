@@ -82,3 +82,9 @@ fun generateMatchingList(xs: int list, num: int) =
 
 val myList = [1, 2, 2, 3, 4, 5, 3, 6, 7];
 val matchingList = generateMatchingList(myList, 3);
+
+(* list append *)
+val li1 = [1, 2, 3];
+val li2 = [8, 9, 10];
+
+val appended_li = li1 @ li2;
