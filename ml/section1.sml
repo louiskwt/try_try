@@ -97,3 +97,5 @@ val indexOption = List.findi (fn (_, x) => x = element) myList;
 val index = case indexOption of
                 SOME (i, _) => i
               | NONE => ~1;  (* or any other value to indicate element not found *)
+(* floor division *)
+val d = 28 div 3 (* =>  9 *)
