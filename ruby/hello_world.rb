@@ -36,3 +36,14 @@ numbers.each do |number|
     puts "odd: #{number}"
   end
 end
+
+def square(x)
+  x * x
+end
+
+def square_of_largest(x, y, z)
+  sum = square(x) + square(y) + square(z) - square([x, y, z].min)
+end
+
+puts square_of_largest(3, 2, 3)
+puts square_of_largest(3, 2, 5)  
