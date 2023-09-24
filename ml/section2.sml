@@ -9,7 +9,7 @@ val x = {bar = (1+2,true andalso true), foo = 3+4, baz = (false,9) };
 
 (* data binding *)
 
-datatype mytype = ThreeInts of int * int * int | TwoBools of bool * bool | Str of string;
+datatype mytype = ThreeInts of int * int * int | TwoBools of bool * bool | Str of string; (* One of type *)
 
 val x = ThreeInts(1+1,2,3);
 val name = Str("Moa");
