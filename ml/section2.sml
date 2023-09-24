@@ -17,3 +17,12 @@ val y = TwoBools(true, false);
 val con = TwoBools; (* Constructor can be passed as a function *)
 
 (* pattern matching *)
+fun f (x: mytype) = 
+    case x of
+        ThreeInts(i1, i2, i3) => i1 + i3
+        | TwoBools(b1, b2) => if b2 then 1 else 0
+        | Str(s) => size s;
+
+val z = f(ThreeInts (1, 2, 9));
+val w = f(TwoBools (true, false));
+val v = f(Str("Moa"));
