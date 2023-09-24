@@ -22,6 +22,7 @@ fun f (x: mytype) =
         ThreeInts(i1, i2, i3) => i1 + i3
         | TwoBools(b1, b2) => if b2 then 1 else 0
         | Str(s) => size s;
+        (* | Str(s) => 23; => error: redundant case match *)
 
 val z = f(ThreeInts (1, 2, 9));
 val w = f(TwoBools (true, false));
