@@ -22,3 +22,13 @@ val test_exp = Add (Constant 19, Negate (Constant 4))
 val test1 = max_constant test_exp = 19
 val test_exp2 = Multiply (Constant 19, Multiply (Constant 4, Constant 7))
 val test2 = max_constant test_exp2 = 19
+
+fun min_constant e =
+    case e of
+        Constant i => i
+        | Negate e2 => ~ (min_constant e2)
+        | Add (e1, e2) => Int.min (min_constant e1, min_constant e2)
+        | Multiply (e1, e2) => Int.min (min_constant e1, min_constant e2)
+
+val test3 = min_constant test_exp = ~4
+val test4 = min_constant test_exp2 = 4
