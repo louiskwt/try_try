@@ -22,5 +22,4 @@ void draw(int h)
         printf("#");
     }
     
-    printf("\n");
 }
