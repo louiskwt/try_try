@@ -143,3 +143,6 @@ share/
 bin/
 include/
 *.cfg
+.Rproj.user
+
+.csv
