@@ -1,0 +1,9 @@
+{
+  "name": "shopify_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@shopify/cli": "^3.61.2"
+  }
+}
