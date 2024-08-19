@@ -1,3 +1,3 @@
 # Try Try
 
-This is a repo created for the things that I try as I learn new programming languages and technologies.
+This is a repo created for me to experiment new programming languages and technologies.
