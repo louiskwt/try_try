@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 
 #define TSH_RL_BUFSIZE 1024
 #define TSH_TOK_BUFSIZE 64
@@ -57,8 +58,17 @@ void tsh_loop(void)
     char **args;
     int status;
 
+
     do {
-        printf("> ");
+        char cwd[PATH_MAX];
+
+        if (getcwd(cwd, sizeof(cwd)) == NULL)
+        {
+            fprintf(stderr, "Fail to get directory.");
+            exit(EXIT_FAILURE);
+        }
+        
+        printf("%s | > ", cwd);
         line = tsh_read_line();
         args = tsh_split_line(line); // split the line into args
         status = tsh_execute(args);
