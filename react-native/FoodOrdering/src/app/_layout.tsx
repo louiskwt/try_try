@@ -6,7 +6,7 @@ import * as SplashScreen from "expo-splash-screen";
 import {useEffect} from "react";
 import "react-native-reanimated";
 
-import CartProvider from "@/provider/CartProvider";
+import CartProvider from "@/providers/CartProvider";
 
 import {useColorScheme} from "@components/useColorScheme";
 
