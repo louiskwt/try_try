@@ -1,11 +1,28 @@
 import Button from "@/components/Button";
+import {defaultPizzaImage} from "@/components/ProductListItem";
+import Colors from "@/constants/Colors";
+import * as ImagePicker from "expo-image-picker";
+import {Stack} from "expo-router";
 import {useState} from "react";
-import {StyleSheet, Text, TextInput, View} from "react-native";
+import {Image, StyleSheet, Text, TextInput, View} from "react-native";
 
 const CreateProductScreen = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [errors, setErrors] = useState("");
+  const [image, setImage] = useState<string | null>(null);
+
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ["images", "videos"],
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) setImage(result.assets[0].uri);
+  };
 
   const resetFields = () => {
     setName("");
@@ -37,7 +54,11 @@ const CreateProductScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Create</Text>
+      <Stack.Screen options={{title: "Create Product"}} />
+      <Image source={{uri: image || defaultPizzaImage}} style={styles.image} />
+      <Text style={styles.textButton} onPress={pickImage}>
+        Select Image
+      </Text>
       <Text style={styles.label}>Name</Text>
       <TextInput placeholder="name" value={name} onChangeText={setName} style={styles.input} />
       <Text style={styles.label}>Price ($)</Text>
@@ -60,6 +81,16 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 5,
     marginBottom: 20,
+  },
+  image: {
+    width: "50%",
+    aspectRatio: 1,
+    alignSelf: "center",
+  },
+  textButton: {
+    alignSelf: "center",
+    fontWeight: "bold",
+    color: Colors.light.tint,
   },
   label: {
     color: "gray",
