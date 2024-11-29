@@ -13,9 +13,9 @@ const SignInScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Email</Text>
-      <TextInput placeholder="name" value={email} onChangeText={setEmail} style={styles.input} />
+      <TextInput placeholder="jon@gmail.com" value={email} onChangeText={setEmail} style={styles.input} />
       <Text style={styles.label}>Password</Text>
-      <TextInput placeholder="name" value={password} secureTextEntry onChangeText={setPassword} style={styles.input} />
+      <TextInput placeholder="" value={password} secureTextEntry onChangeText={setPassword} style={styles.input} />
       <Button text="Sign in" />
       <Text style={styles.textButton} onPress={navigateToSignUp}>
         Create an account
