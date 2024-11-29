@@ -1,12 +1,9 @@
 import {defaultPizzaImage} from "@/components/ProductListItem";
 import Colors from "@/constants/Colors";
-import {PizzaSize} from "@/types";
 import products from "@assets/data/products";
 import {FontAwesome} from "@expo/vector-icons";
 import {Link, Stack, useLocalSearchParams} from "expo-router";
 import {Image, Pressable, StyleSheet, Text, View} from "react-native";
-
-const sizes: PizzaSize[] = ["S", "M", "L", "XL"];
 
 const ProductDetailScreen = () => {
   const {id} = useLocalSearchParams();
