@@ -1,7 +1,8 @@
+import OrderItemListItem from "@/components/OrderItemListItem";
 import OrderListItem from "@/components/OrderListItem";
 import orders from "@assets/data/orders";
 import {Stack, useLocalSearchParams} from "expo-router";
-import {StyleSheet, Text, View} from "react-native";
+import {FlatList, StyleSheet, Text, View} from "react-native";
 
 const ProductDetailScreen = () => {
   const {id} = useLocalSearchParams();
@@ -12,6 +13,7 @@ const ProductDetailScreen = () => {
     <View style={style.container}>
       <Stack.Screen options={{title: `Order #${order?.id}` || "Order"}} />
       <OrderListItem order={order} />
+      <FlatList style={style.orderItemList} data={order.order_items} renderItem={({item}) => <OrderItemListItem orderItem={item} />} contentContainerStyle={{gap: 10}} />
     </View>
   );
 };
@@ -19,6 +21,9 @@ const ProductDetailScreen = () => {
 const style = StyleSheet.create({
   container: {
     padding: 10,
+  },
+  orderItemList: {
+    marginVertical: 10,
   },
 });
 
