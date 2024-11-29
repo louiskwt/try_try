@@ -10,17 +10,15 @@ type OrderItemListItemProps = {
 const OrderItemListItem = ({orderItem}: OrderItemListItemProps) => {
   return (
     <View style={styles.container}>
-      <View style={styles.columnLeft}>
-        <Image source={{uri: orderItem.products.image || defaultPizzaImage}} style={styles.image} />
-        <View style={styles.basicInfoSection}>
-          <Text style={styles.title}>{orderItem.products.name}</Text>
-          <View style={styles.itemInfoRow}>
-            <Text style={styles.price}>${orderItem.products.price * orderItem.quantity}</Text>
-            <Text>Size: {orderItem.size}</Text>
-          </View>
+      <Image source={{uri: orderItem.products.image || defaultPizzaImage}} style={styles.image} resizeMode="contain" />
+      <View style={{flex: 1}}>
+        <Text style={styles.title}>{orderItem.products.name}</Text>
+        <View style={styles.subtitleContainer}>
+          <Text style={styles.price}>${orderItem.products.price * orderItem.quantity}</Text>
+          <Text>Size: {orderItem.size}</Text>
         </View>
       </View>
-      <View style={styles.columnRight}>
+      <View style={styles.quantitySelector}>
         <Text>{orderItem.quantity}</Text>
       </View>
     </View>
@@ -38,10 +36,10 @@ const styles = StyleSheet.create({
   basicInfoSection: {
     flexDirection: "column",
   },
-  itemInfoRow: {
+  subtitleContainer: {
     flexDirection: "row",
-    justifyContent: "space-around",
     marginTop: 5,
+    gap: 5,
   },
   title: {
     fontSize: 18,
@@ -69,15 +67,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "80%",
   },
-  columnRight: {
-    width: "20%",
-    flexDirection: "column",
+  quantitySelector: {
+    flexDirection: "row",
     alignItems: "center",
-    flex: 1,
+    marginVertical: 10,
   },
   image: {
-    width: "30%",
+    width: 75,
     aspectRatio: 1,
+    alignSelf: "center",
+    marginRight: 10,
   },
 });
 
