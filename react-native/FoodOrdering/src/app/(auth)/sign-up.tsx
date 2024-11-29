@@ -8,7 +8,8 @@ const SignInScreen = () => {
   const [email, setEmail] = useState<string | undefined>("");
   const [password, setPassword] = useState<string | undefined>("");
   const router = useRouter();
-  const navigateToSignUp = () => router.navigate("/(auth)/sign-up");
+
+  const navigateToSignIn = () => router.navigate("/(auth)/sign-in");
 
   return (
     <View style={styles.container}>
@@ -16,9 +17,9 @@ const SignInScreen = () => {
       <TextInput placeholder="name" value={email} onChangeText={setEmail} style={styles.input} />
       <Text style={styles.label}>Password</Text>
       <TextInput placeholder="name" value={password} secureTextEntry onChangeText={setPassword} style={styles.input} />
-      <Button text="Sign in" />
-      <Text style={styles.textButton} onPress={navigateToSignUp}>
-        Create an account
+      <Button text="Create account" />
+      <Text style={styles.textButton} onPress={navigateToSignIn}>
+        Sign in
       </Text>
     </View>
   );

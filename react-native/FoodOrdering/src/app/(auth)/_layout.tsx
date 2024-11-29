@@ -7,6 +7,7 @@ export default function AuthStack() {
       screenOptions={{
         title: "Sign in",
       }}>
+      <Stack.Screen name="sign-up" options={{title: "Sign up"}} />
       <Stack.Screen name="sign-in" options={{title: "Sign in"}} />
     </Stack>
   );
