@@ -1,7 +1,8 @@
 import {Order} from "@/types";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import {StyleSheet, Text, View} from "react-native";
+import {Link} from "expo-router";
+import {Pressable, StyleSheet, Text, View} from "react-native";
 
 type OrderListItemProps = {
   order: Order;
@@ -12,15 +13,17 @@ const OrderListItem = ({order}: OrderListItemProps) => {
   const createdDate = dayjs(order.created_at);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.basicInfoSection}>
-        <Text style={styles.title}>Order #{order.id}</Text>
-        <Text style={styles.date}>{createdDate.fromNow()}</Text>
-      </View>
-      <View style={styles.statusSection}>
-        <Text style={styles.status}>{order.status}</Text>
-      </View>
-    </View>
+    <Link href={`/(user)/orders/${order.id}`} asChild>
+      <Pressable style={styles.container}>
+        <View style={styles.basicInfoSection}>
+          <Text style={styles.title}>Order #{order.id}</Text>
+          <Text style={styles.date}>{createdDate.fromNow()}</Text>
+        </View>
+        <View style={styles.statusSection}>
+          <Text style={styles.status}>{order.status}</Text>
+        </View>
+      </Pressable>
+    </Link>
   );
 };
 
