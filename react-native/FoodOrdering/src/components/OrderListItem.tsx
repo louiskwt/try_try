@@ -13,7 +13,7 @@ const OrderListItem = ({order}: OrderListItemProps) => {
   const createdDate = dayjs(order.created_at);
 
   return (
-    <Link href={`/(user)/orders/${order.id}`} asChild>
+    <Link href={`/orders/${order.id}`} asChild>
       <Pressable style={styles.container}>
         <View style={styles.basicInfoSection}>
           <Text style={styles.title}>Order #{order.id}</Text>
