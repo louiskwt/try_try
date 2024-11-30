@@ -34,3 +34,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# do not ignore lib which is by default ignored
+!src/lib
