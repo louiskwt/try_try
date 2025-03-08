@@ -1,1 +1,7 @@
-site_name: My Docs
+site_name: My Dwag
+
+nav:
+  - Home: index.md
+  - About: about.md
+
+copyright: "Hello"
