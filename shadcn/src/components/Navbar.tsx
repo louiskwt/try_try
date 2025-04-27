@@ -1,6 +1,6 @@
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
-import {Moon} from "lucide-react";
+import {LogOut, Moon, Settings, User} from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -20,10 +20,16 @@ const Navbar = () => {
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuItem>Subscription</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <User className="h-[1.2rem] w-[1.2-rem] mr-2" /> Profile
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Settings className="h-[1.2rem] w-[1.2-rem] mr-2" />
+                  Settings
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <LogOut className="h-[1.2rem] w-[1.2-rem] mr-2" /> Logout
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </Avatar>
           </DropdownMenuTrigger>
