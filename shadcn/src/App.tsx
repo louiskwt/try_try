@@ -1,13 +1,13 @@
-import {Button} from "@/components/ui/button";
-import {CirclePlus} from "lucide-react";
+import AppSidebar from "./components/AppSidebar";
+import Navbar from "./components/Navbar";
 function App() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center">
-      <Button variant="destructive" size={"lg"}>
-        <CirclePlus />
-        Click me
-      </Button>
-    </div>
+    <>
+      <AppSidebar />
+      <main className="w-full">
+        <Navbar />
+      </main>
+    </>
   );
 }
 
