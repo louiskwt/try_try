@@ -1,3 +1,4 @@
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Moon} from "lucide-react";
 
 const Navbar = () => {
@@ -9,6 +10,10 @@ const Navbar = () => {
       <div className="flex items-center gap-4">
         <a href="">Dashboard</a>
         <Moon />
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
       </div>
     </nav>
   );
