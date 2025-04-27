@@ -17,7 +17,7 @@ const Navbar = () => {
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
-              <DropdownMenuContent>
+              <DropdownMenuContent sideOffset={10}>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
@@ -27,7 +27,7 @@ const Navbar = () => {
                   <Settings className="h-[1.2rem] w-[1.2-rem] mr-2" />
                   Settings
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem variant={"destructive"}>
                   <LogOut className="h-[1.2rem] w-[1.2-rem] mr-2" /> Logout
                 </DropdownMenuItem>
               </DropdownMenuContent>
